@@ -1,0 +1,105 @@
+
+heapTest/heapTest:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	02c000ef          	jal	ra,30 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <prints>:
+  10:	00054783          	lbu	a5,0(a0)
+  14:	00078c63          	beqz	a5,2c <prints+0x1c>
+  18:	00001737          	lui	a4,0x1
+  1c:	00150513          	addi	a0,a0,1
+  20:	80f70023          	sb	a5,-2048(a4) # 800 <ADDR_END>
+  24:	00054783          	lbu	a5,0(a0)
+  28:	fe079ae3          	bnez	a5,1c <prints+0xc>
+  2c:	00008067          	ret
+
+00000030 <main>:
+  30:	fe010113          	addi	sp,sp,-32
+  34:	00112e23          	sw	ra,28(sp)
+  38:	00812c23          	sw	s0,24(sp)
+  3c:	00912a23          	sw	s1,20(sp)
+  40:	01212823          	sw	s2,16(sp)
+  44:	01312623          	sw	s3,12(sp)
+  48:	01412423          	sw	s4,8(sp)
+  4c:	01512223          	sw	s5,4(sp)
+  50:	01612023          	sw	s6,0(sp)
+  54:	17800513          	li	a0,376
+  58:	fb9ff0ef          	jal	ra,10 <prints>
+  5c:	04100793          	li	a5,65
+  60:	000014b7          	lui	s1,0x1
+  64:	83048a13          	addi	s4,s1,-2000 # 830 <ADDR_END+0x30>
+  68:	00fa0023          	sb	a5,0(s4)
+  6c:	0000b937          	lui	s2,0xb
+  70:	70090a93          	addi	s5,s2,1792 # b700 <ADDR_END+0xaf00>
+  74:	00fa8023          	sb	a5,0(s5)
+  78:	000e0b03          	lb	s6,0(t3)
+  7c:	18800513          	li	a0,392
+  80:	f91ff0ef          	jal	ra,10 <prints>
+  84:	1a000513          	li	a0,416
+  88:	f89ff0ef          	jal	ra,10 <prints>
+  8c:	81648023          	sb	s6,-2048(s1)
+  90:	18800513          	li	a0,392
+  94:	f7dff0ef          	jal	ra,10 <prints>
+  98:	00a00793          	li	a5,10
+  9c:	00fa0023          	sb	a5,0(s4)
+  a0:	78090713          	addi	a4,s2,1920
+  a4:	04200793          	li	a5,66
+  a8:	00f70023          	sb	a5,0(a4)
+  ac:	000e0b03          	lb	s6,0(t3)
+  b0:	18800513          	li	a0,392
+  b4:	f5dff0ef          	jal	ra,10 <prints>
+  b8:	1a000513          	li	a0,416
+  bc:	f55ff0ef          	jal	ra,10 <prints>
+  c0:	81648023          	sb	s6,-2048(s1)
+  c4:	18800513          	li	a0,392
+  c8:	f49ff0ef          	jal	ra,10 <prints>
+  cc:	00300793          	li	a5,3
+  d0:	00fa0023          	sb	a5,0(s4)
+  d4:	7c090913          	addi	s2,s2,1984
+  d8:	04300793          	li	a5,67
+  dc:	00f90023          	sb	a5,0(s2)
+  e0:	000e0903          	lb	s2,0(t3)
+  e4:	18800513          	li	a0,392
+  e8:	f29ff0ef          	jal	ra,10 <prints>
+  ec:	1a000513          	li	a0,416
+  f0:	f21ff0ef          	jal	ra,10 <prints>
+  f4:	81248023          	sb	s2,-2048(s1)
+  f8:	18800513          	li	a0,392
+  fc:	f15ff0ef          	jal	ra,10 <prints>
+ 100:	18800513          	li	a0,392
+ 104:	f0dff0ef          	jal	ra,10 <prints>
+ 108:	1ac00513          	li	a0,428
+ 10c:	f05ff0ef          	jal	ra,10 <prints>
+ 110:	18800513          	li	a0,392
+ 114:	efdff0ef          	jal	ra,10 <prints>
+ 118:	83448913          	addi	s2,s1,-1996
+ 11c:	01592023          	sw	s5,0(s2)
+ 120:	000e0a03          	lb	s4,0(t3)
+ 124:	18800513          	li	a0,392
+ 128:	ee9ff0ef          	jal	ra,10 <prints>
+ 12c:	1a000513          	li	a0,416
+ 130:	ee1ff0ef          	jal	ra,10 <prints>
+ 134:	81448023          	sb	s4,-2048(s1)
+ 138:	18800513          	li	a0,392
+ 13c:	ed5ff0ef          	jal	ra,10 <prints>
+ 140:	0000c7b7          	lui	a5,0xc
+ 144:	80078793          	addi	a5,a5,-2048 # b800 <ADDR_END+0xb000>
+ 148:	00f92023          	sw	a5,0(s2)
+ 14c:	00000513          	li	a0,0
+ 150:	01c12083          	lw	ra,28(sp)
+ 154:	01812403          	lw	s0,24(sp)
+ 158:	01412483          	lw	s1,20(sp)
+ 15c:	01012903          	lw	s2,16(sp)
+ 160:	00c12983          	lw	s3,12(sp)
+ 164:	00812a03          	lw	s4,8(sp)
+ 168:	00412a83          	lw	s5,4(sp)
+ 16c:	00012b03          	lw	s6,0(sp)
+ 170:	02010113          	addi	sp,sp,32
+ 174:	00008067          	ret

@@ -1,0 +1,55 @@
+
+VRTests/VRTests:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	02c000ef          	jal	ra,30 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <prints>:
+  10:	00054783          	lbu	a5,0(a0)
+  14:	00078c63          	beqz	a5,2c <prints+0x1c>
+  18:	00001737          	lui	a4,0x1
+  1c:	00150513          	addi	a0,a0,1
+  20:	80f70023          	sb	a5,-2048(a4) # 800 <ADDR_END>
+  24:	00054783          	lbu	a5,0(a0)
+  28:	fe079ae3          	bnez	a5,1c <prints+0xc>
+  2c:	00008067          	ret
+
+00000030 <main>:
+  30:	fe010113          	addi	sp,sp,-32
+  34:	00112e23          	sw	ra,28(sp)
+  38:	00812c23          	sw	s0,24(sp)
+  3c:	00912a23          	sw	s1,20(sp)
+  40:	01212823          	sw	s2,16(sp)
+  44:	01312623          	sw	s3,12(sp)
+  48:	00001437          	lui	s0,0x1
+  4c:	81640793          	addi	a5,s0,-2026 # 816 <ADDR_END+0x16>
+  50:	0007a983          	lw	s3,0(a5)
+  54:	0007a903          	lw	s2,0(a5)
+  58:	81240493          	addi	s1,s0,-2030
+  5c:	00048483          	lb	s1,0(s1)
+  60:	0ff4f493          	zext.b	s1,s1
+  64:	0b000513          	li	a0,176
+  68:	fa9ff0ef          	jal	ra,10 <prints>
+  6c:	81342223          	sw	s3,-2044(s0)
+  70:	0c400513          	li	a0,196
+  74:	f9dff0ef          	jal	ra,10 <prints>
+  78:	81242423          	sw	s2,-2040(s0)
+  7c:	0d800513          	li	a0,216
+  80:	f91ff0ef          	jal	ra,10 <prints>
+  84:	80942023          	sw	s1,-2048(s0)
+  88:	0e800513          	li	a0,232
+  8c:	f85ff0ef          	jal	ra,10 <prints>
+  90:	00000513          	li	a0,0
+  94:	01c12083          	lw	ra,28(sp)
+  98:	01812403          	lw	s0,24(sp)
+  9c:	01412483          	lw	s1,20(sp)
+  a0:	01012903          	lw	s2,16(sp)
+  a4:	00c12983          	lw	s3,12(sp)
+  a8:	02010113          	addi	sp,sp,32
+  ac:	00008067          	ret

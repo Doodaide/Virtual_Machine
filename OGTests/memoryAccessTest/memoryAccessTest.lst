@@ -1,0 +1,49 @@
+
+memoryAccessTest/memoryAccessTest:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	02c000ef          	jal	ra,30 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <prints>:
+  10:	00054783          	lbu	a5,0(a0)
+  14:	00078c63          	beqz	a5,2c <prints+0x1c>
+  18:	00001737          	lui	a4,0x1
+  1c:	00150513          	addi	a0,a0,1
+  20:	80f70023          	sb	a5,-2048(a4) # 800 <ADDR_END>
+  24:	00054783          	lbu	a5,0(a0)
+  28:	fe079ae3          	bnez	a5,1c <prints+0xc>
+  2c:	00008067          	ret
+
+00000030 <main>:
+  30:	ff010113          	addi	sp,sp,-16
+  34:	00112623          	sw	ra,12(sp)
+  38:	00812423          	sw	s0,8(sp)
+  3c:	00912223          	sw	s1,4(sp)
+  40:	09800513          	li	a0,152
+  44:	fcdff0ef          	jal	ra,10 <prints>
+  48:	0b000513          	li	a0,176
+  4c:	fc5ff0ef          	jal	ra,10 <prints>
+  50:	40400413          	li	s0,1028
+  54:	0af00793          	li	a5,175
+  58:	00f40023          	sb	a5,0(s0)
+  5c:	09800513          	li	a0,152
+  60:	fb1ff0ef          	jal	ra,10 <prints>
+  64:	0cc00513          	li	a0,204
+  68:	fa9ff0ef          	jal	ra,10 <prints>
+  6c:	00041403          	lh	s0,0(s0)
+  70:	000017b7          	lui	a5,0x1
+  74:	8087a423          	sw	s0,-2040(a5) # 808 <ADDR_END+0x8>
+  78:	0e400513          	li	a0,228
+  7c:	f95ff0ef          	jal	ra,10 <prints>
+  80:	00000513          	li	a0,0
+  84:	00c12083          	lw	ra,12(sp)
+  88:	00812403          	lw	s0,8(sp)
+  8c:	00412483          	lw	s1,4(sp)
+  90:	01010113          	addi	sp,sp,16
+  94:	00008067          	ret

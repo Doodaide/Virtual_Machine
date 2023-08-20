@@ -1,0 +1,8 @@
+
+--------------------
+Storing half
+Expected: af
+--------------------
+Loading half
+Expected: af
+CPU Halt Requested

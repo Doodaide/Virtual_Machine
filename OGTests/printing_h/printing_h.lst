@@ -1,0 +1,18 @@
+
+printing_h/printing_h:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	00c000ef          	jal	ra,10 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <main>:
+  10:	000017b7          	lui	a5,0x1
+  14:	04800713          	li	a4,72
+  18:	80e78023          	sb	a4,-2048(a5) # 800 <ADDR_END>
+  1c:	00000513          	li	a0,0
+  20:	00008067          	ret

@@ -1,0 +1,55 @@
+
+shift/shift:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	02c000ef          	jal	ra,30 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <prints>:
+  10:	00054783          	lbu	a5,0(a0)
+  14:	00078c63          	beqz	a5,2c <prints+0x1c>
+  18:	00001737          	lui	a4,0x1
+  1c:	00150513          	addi	a0,a0,1
+  20:	80f70023          	sb	a5,-2048(a4) # 800 <ADDR_END>
+  24:	00054783          	lbu	a5,0(a0)
+  28:	fe079ae3          	bnez	a5,1c <prints+0xc>
+  2c:	00008067          	ret
+
+00000030 <main>:
+  30:	fe010113          	addi	sp,sp,-32
+  34:	00112e23          	sw	ra,28(sp)
+  38:	00812c23          	sw	s0,24(sp)
+  3c:	00912a23          	sw	s1,20(sp)
+  40:	01212823          	sw	s2,16(sp)
+  44:	01312623          	sw	s3,12(sp)
+  48:	01412423          	sw	s4,8(sp)
+  4c:	000014b7          	lui	s1,0x1
+  50:	81648413          	addi	s0,s1,-2026 # 816 <ADDR_END+0x16>
+  54:	00042983          	lw	s3,0(s0)
+  58:	00042403          	lw	s0,0(s0)
+  5c:	0b000513          	li	a0,176
+  60:	fb1ff0ef          	jal	ra,10 <prints>
+  64:	008997b3          	sll	a5,s3,s0
+  68:	80f4a423          	sw	a5,-2040(s1)
+  6c:	0b400513          	li	a0,180
+  70:	fa1ff0ef          	jal	ra,10 <prints>
+  74:	0b000513          	li	a0,176
+  78:	f99ff0ef          	jal	ra,10 <prints>
+  7c:	0089d433          	srl	s0,s3,s0
+  80:	8084a423          	sw	s0,-2040(s1)
+  84:	0b400513          	li	a0,180
+  88:	f89ff0ef          	jal	ra,10 <prints>
+  8c:	00000513          	li	a0,0
+  90:	01c12083          	lw	ra,28(sp)
+  94:	01812403          	lw	s0,24(sp)
+  98:	01412483          	lw	s1,20(sp)
+  9c:	01012903          	lw	s2,16(sp)
+  a0:	00c12983          	lw	s3,12(sp)
+  a4:	00812a03          	lw	s4,8(sp)
+  a8:	02010113          	addi	sp,sp,32
+  ac:	00008067          	ret

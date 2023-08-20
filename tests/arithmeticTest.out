@@ -1,0 +1,60 @@
+
+--------------------
+Addition
+Expected: 11
+Actual: 11
+--------------------
+AdditionImmediate
+Expected: 25
+Actual: 25
+--------------------
+
+Subtraction
+Expected: -1
+Actual: -1
+--------------------
+
+xor
+Expected: 3
+Actual: 3
+--------------------
+
+xori
+Expected: 15
+Actual: 15
+--------------------
+
+or
+Expected: 7
+Actual: 7
+--------------------
+
+ori
+Expected: 15
+Actual: 15
+--------------------
+
+and
+Expected: 4
+Actual: 4
+--------------------
+
+andi
+Expected: 0
+Actual: 0
+--------------------
+
+sll
+Expected: 320
+Actual: 320
+--------------------
+
+sra
+Expected: 335544320
+Actual: 335544320
+--------------------
+
+srl
+Expected: 0
+Actual: 0
+CPU Halt Requested

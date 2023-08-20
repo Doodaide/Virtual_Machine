@@ -1,0 +1,32 @@
+
+5_sum/5_sum:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	00c000ef          	jal	ra,10 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <main>:
+  10:	000017b7          	lui	a5,0x1
+  14:	81678793          	addi	a5,a5,-2026 # 816 <ADDR_END+0x16>
+  18:	0007a783          	lw	a5,0(a5)
+  1c:	02078c63          	beqz	a5,54 <main+0x44>
+  20:	00500713          	li	a4,5
+  24:	00000693          	li	a3,0
+  28:	00001637          	lui	a2,0x1
+  2c:	81660613          	addi	a2,a2,-2026 # 816 <ADDR_END+0x16>
+  30:	00f686b3          	add	a3,a3,a5
+  34:	fff70713          	addi	a4,a4,-1
+  38:	00070663          	beqz	a4,44 <main+0x34>
+  3c:	00062783          	lw	a5,0(a2)
+  40:	fe0798e3          	bnez	a5,30 <main+0x20>
+  44:	000017b7          	lui	a5,0x1
+  48:	80d7a223          	sw	a3,-2044(a5) # 804 <ADDR_END+0x4>
+  4c:	00000513          	li	a0,0
+  50:	00008067          	ret
+  54:	00078693          	mv	a3,a5
+  58:	fedff06f          	j	44 <main+0x34>

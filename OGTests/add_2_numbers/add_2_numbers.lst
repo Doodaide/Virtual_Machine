@@ -1,0 +1,21 @@
+
+add_2_numbers/add_2_numbers:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	00c000ef          	jal	ra,10 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <main>:
+  10:	00001737          	lui	a4,0x1
+  14:	81670793          	addi	a5,a4,-2026 # 816 <ADDR_END+0x16>
+  18:	0007a683          	lw	a3,0(a5)
+  1c:	0007a783          	lw	a5,0(a5)
+  20:	00d787b3          	add	a5,a5,a3
+  24:	80f72223          	sw	a5,-2044(a4)
+  28:	00000513          	li	a0,0
+  2c:	00008067          	ret

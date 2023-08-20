@@ -1,0 +1,65 @@
+
+-------------------------------
+Instruction Start: 
+Operation: addi
+R[2] = R[0] + 2047
+imm: 2047
+7ff
+
+-------------------------------
+Instruction Start: 
+Operation: jal
+R[1] = PC(4) + 4
+PC(4) = PC(4) + (6 << 1)
+PC = 4
+
+-------------------------------
+Instruction Start: 
+Operation: lui
+R[0] = {31:12 = 1000 | 11:0 = 0}
+imm: 4096
+
+-------------------------------
+Instruction Start: 
+Operation: addi
+R[14] = R[0] + 72
+imm: 72
+48
+
+-------------------------------
+Instruction Start: 
+Operation: sb
+M[R[15] + -2048] = R[14]
+imm: -2048
+fffff800
+Console Write Character Requested
+H
+-------------------------------
+Instruction Start: 
+Operation: addi
+R[10] = R[0] + 0
+imm: 0
+0
+
+-------------------------------
+Instruction Start: 
+Operation: lb
+R[0] = PC(32) + 4
+PC(32) = R[1] + 0
+imm: 0
+0
+PC = 20
+
+-------------------------------
+Instruction Start: 
+Operation: lui
+R[0] = {31:12 = 1000 | 11:0 = 0}
+imm: 4096
+
+-------------------------------
+Instruction Start: 
+Operation: sb
+M[R[15] + -2036] = R[0]
+imm: -2036
+fffff80c
+CPU Halt Requested
